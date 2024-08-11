@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#bookings">Bookings</a></li>
+                <li><a href="#profile">Profile</a></li>
+            </ul>
+        </nav>
+        <button id="login-btn">Login/Sign Up</button>
+    </header>
+
+    <!-- Main Sections -->
+    <section id="home">Welcome to Service Finder</section>
+    <section id="services">Our Services</section>
+    <section id="bookings">Your Bookings</section>
+    <section id="profile">Your Profile</section>
+
+    <!-- Login/Sign-Up Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Login or Sign Up</h3>
+            <div class="auth-options">
+                <button id="google-signin-btn">Login with Google</button>
+                <button id="facebook-signin-btn">Login with Facebook</button>
+                <button onclick="showPhoneLogin()">Login with Mobile</button>
+            </div>
+            <div id="phone-login" style="display:none;">
+                <input type="text" id="phone-number" placeholder="Enter your phone number">
+                <button onclick="sendOTP()">Send OTP</button>
+                <input type="text" id="otp-code" placeholder="Enter OTP" style="display:none;">
+                <button id="verify-otp-btn" onclick="verifyOTP()" style="display:none;">Verify OTP</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Google API Script -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com">
+
+    <!-- Facebook SDK Script -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+    <script src="app.js"></script>
+</body>
+</html>
